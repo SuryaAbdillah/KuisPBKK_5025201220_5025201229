@@ -15,7 +15,9 @@ class Home extends CI_Controller {
 		// $DATA = array('queryAllRsv' => $queryAllReservasi);
 		// $this->load->view('home', $DATA);
 
+		$this->load->view('templates/head');
 		$this->load->view('login');
+		$this->load->view('templates/footer');
 	}
 
 	public function fungsi_login()
@@ -29,34 +31,69 @@ class Home extends CI_Controller {
 
 		$queryUserDetail = $this->M_Mahasiswa->getDataUserDetail($user);
 		$queryAllReservasi = $this->M_Mahasiswa->getDataReservasi();
-
+		
 		if ($password == $queryUserDetail->password){
 			$DATA = array('queryAllRsv' => $queryAllReservasi, 'queryUsr' => $queryUserDetail);
+			$this->load->view('templates/head');
+			$this->load->view('templates/navbar');
 			$this->load->view('home', $DATA);
+			$this->load->view('templates/footer');
 			//redirect(base_url(''));
 		}else{
 			redirect(base_url(''));
 		}
 	}
+	
+	public function jadwal()
+	{
+		$user = 'Davian';
+		$queryUserDetail = $this->M_Mahasiswa->getDataUserDetail($user);
+		$queryAllReservasi = $this->M_Mahasiswa->getDataReservasi();
+
+		$DATA = array('queryAllRsv' => $queryAllReservasi, 'queryUsr' => $queryUserDetail);
+		$this->load->view('templates/head');
+		$this->load->view('templates/navbar');
+		$this->load->view('home', $DATA);
+		$this->load->view('templates/footer');
+	}
 
 	public function halaman_tambah() 
 	{
+		$this->load->view('templates/head');
+		$this->load->view('templates/navbar');
 		$this->load->view('halaman_tambah_mhs');
+		$this->load->view('templates/footer');
 	}
-
+	
 	public function halaman_edit($kode)
 	{
 		// $queryMahasiswaDetail = $this->M_Mahasiswa->getDataMahasiswaDetail($nim);
 		// $DATA = array('queryMhsDetail' => $queryMahasiswaDetail);
 		// $this->load->view('halaman_edit_mhs', $DATA);
-
+		
 		$queryReservasiDetail = $this->M_Mahasiswa->getDataReservasiDetail($kode);
 		$DATA = array('queryRsvDetail' => $queryReservasiDetail);
+		$this->load->view('templates/head');
+		$this->load->view('templates/navbar');
+		$this->load->view('halaman_edit_mhs', $DATA);
+		$this->load->view('templates/footer');
+	}
+	
+	public function load_css($kode)
+	{
+		
 		$this->load->view('halaman_edit_mhs', $DATA);
 	}
 
 	public function fungsiTambah()
 	{
+		// $this->form_validation->set_rules('kode','Kode','required')
+		// $this->form_validation->set_rules('origin','Keberangkatan','required')
+		// $this->form_validation->set_rules('destinasi','Destinasi','required')
+		// $this->form_validation->set_rules('kapasitas','Kapasitas','required')
+		// $this->form_validation->set_rules('jadwal','Jadwal','required')
+		// $this->form_validation->set_rules('harga','Harga','required')
+
 		$kode = $this->input->post('kode');
 		$origin = $this->input->post('origin');
 		$destinasi = $this->input->post('destinasi');
@@ -73,17 +110,21 @@ class Home extends CI_Controller {
 			'jadwal' => $jadwal, 
 			'harga' => $harga
 		);
-
+		
 		$this->M_Mahasiswa->insertDataReservasi($ArrInsert);
-
+		
 		$user = 'Davian';
 		$queryUserDetail = $this->M_Mahasiswa->getDataUserDetail($user);
 		$queryAllReservasi = $this->M_Mahasiswa->getDataReservasi();
-
+		
 		$DATA = array('queryAllRsv' => $queryAllReservasi, 'queryUsr' => $queryUserDetail);
+		// $this->load->view('home', $DATA);
+		$this->load->view('templates/head');
+		$this->load->view('templates/navbar');
 		$this->load->view('home', $DATA);
+		$this->load->view('templates/footer');
 	}
-
+	
 	public function fungsiEdit()
 	{
 		// $nim = $this->input->post('nim');
@@ -91,7 +132,7 @@ class Home extends CI_Controller {
 		// $jurusan = $this->input->post('jurusan');
 
 		// $ArrUpdate = array(
-		// 	'nama' => $nama,
+			// 	'nama' => $nama,
 		// 	'jurusan' => $jurusan
 		// );
 
@@ -125,14 +166,17 @@ class Home extends CI_Controller {
 			'balance' => $queryUserDetail->balance - $queryReservasiDetail->harga * $seats
 		);
 		$this->M_Mahasiswa->updateDataUser($user, $ArrUpdate2);
-
+		
 		$queryAllReservasi = $this->M_Mahasiswa->getDataReservasi();
 		$queryUserDetail2 = $this->M_Mahasiswa->getDataUserDetail($user);
 		$DATA = array('queryAllRsv' => $queryAllReservasi, 'queryUsr' => $queryUserDetail2);
+		
+		$this->load->view('templates/head');
+		$this->load->view('templates/navbar');
 		$this->load->view('home', $DATA);
-
+		$this->load->view('templates/footer');
 	}
-
+	
 	public function fungsiDelete($nim)
 	{
 		$this->M_Mahasiswa->deleteDataMahasiswa($nim);

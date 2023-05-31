@@ -1,0 +1,172 @@
+body {
+    font-family: 'Poppins';
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* FOOTER */
+
+footer {
+    color: white;
+    margin-top: auto;
+    background-color: black;
+    text-align: center;
+}
+
+/* NAVBAR */
+
+nav {
+    background-color: #F2A93B;    
+    filter: drop-shadow(0 1px 0.99rem #BA750E);
+}
+
+.kanan {
+    margin: auto 0 auto 20px;
+    font-size: 20px;
+}
+
+#logo-suroboyo {
+    max-width: 5em; 
+}
+
+#atas {
+    font-size: 2em;
+    font-weight: bolder;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 3px;
+}
+
+#bawah {
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+#logo-suroboyo {
+    filter: brightness(95%);
+    filter: contrast(120%);
+    filter: drop-shadow(1px 1px 1px #AA2F2A);
+}
+
+#profil {
+    border-radius: 50%;
+    max-width: 4em;
+    max-height: 4em;
+}
+
+a:hover {
+    color: #E3241C !important;
+}
+
+/* TABEL */
+.judul-halaman {
+    margin: 0 auto;
+    padding: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.outline-tabel {
+    margin: 3em auto;
+}
+
+.kolom1 {
+    width: 40%;
+}
+
+.kolom2 {
+    width: 10%;
+}
+
+.kolom3 {
+    width: 60%;
+}
+
+table.form {
+    margin: 0 auto;
+}
+
+::placeholder {
+    color: #AAAAAA;
+}
+
+.force-opaque::placeholder {
+    opacity: 1;
+}
+
+tr.atribut>td {
+    padding-bottom: 0.5em;
+}
+
+.button-submit {
+    text-align: center;
+    vertical-align: middle;
+    height: 5em;
+}
+
+.button-submit button {
+    color: white;
+    background-color: #F2A93B;
+    border-radius: 12px;
+    padding: 8px 15px;
+    border: none;
+    filter: drop-shadow(1px 1px 1px #BA750E);
+}
+
+.button-submit button:hover {
+    background-color: #D6870F;
+}
+
+input {
+    padding-right: 10px;
+    text-align: right;
+}
+
+/* LOGIN */
+#login {
+    height: 100%;
+    background-image: url("../images/latar.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.outline-login {
+    margin: 0 auto;
+}
+
+/* HOME */
+.outlineHome {
+    background-color: red;
+}
+
+#border_jadwal {
+    width: 100%;
+    text-align: center;
+}
+
+#baris_awal {
+    border-bottom: 3px solid;
+}
+
+#juduljadwal {
+    margin: 0 auto;
+    padding: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* PESAN TIKET */
+table.pesan {
+    margin: 0 auto;
+}
+
+#form_pesan, #form_pesan input {
+    width: 100%;
+}
+
