@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style>
+		button:hover {
+			background-color: #F3E1C7 !important;
+		}
+	</style>
 	<title>Suroboyo Bus | Login</title>
 </head>
 <body id="login" style="color: white;">
@@ -19,7 +24,7 @@
 					<td><input type="text" name="password" placeholder="masukkan password"></td>
 				</tr>
 				<tr style="height: 50px;">
-					<td colspan="3"><button type="submit" style="border-radius: 8px; border-color: white; background-color: white;">Login</button></td>
+					<td colspan="3"><button type="submit" style="border-radius: 8px; border-color: white; background-color: white; padding: 0 15px;">Login</button></td>
 				</tr>
 			</table>
 		</form>
