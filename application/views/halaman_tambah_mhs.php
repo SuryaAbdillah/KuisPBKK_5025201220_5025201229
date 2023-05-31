@@ -2,8 +2,11 @@
 <html>
 <head>
 	<title>Halaman Tambah</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'> -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>style.css">
 </head>
-<body>
+<body style="font-family: 'Poppins';">
 	<h3>Halaman Tambah Mahasiswa</h3>
 	<form action="<?php echo base_url('home/fungsiTambah') ?>" method="post">
 	<table>
