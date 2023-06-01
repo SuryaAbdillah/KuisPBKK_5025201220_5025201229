@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div class="outline-tabel" style="width: 40%;">
-		<h3 class="judul-halaman">Konfirmasi Pemesanan Tickets</h3>
+		<h3 class="judul-halaman">Konfirmasi Pemesanan Tiket</h3>
 		
 		<form action="<?php echo base_url('home/fungsiEdit') ?>" method="post">
 		<table id="form_pesan">
